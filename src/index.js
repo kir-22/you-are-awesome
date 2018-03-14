@@ -36,9 +36,9 @@ const asyncIncrementor = () => {
 })
 };
 const createIncrementer = (back) => {
-    new Promise(resolve =>
-    setTimeout(() => {
-        resolve(back)}, 1000));
+    //new Promise(resolve =>
+    //setTimeout(() => {
+      //  resolve(back)}, 1000));
 };
 
 // return same argument not earlier than in one second, and not later, than in two
