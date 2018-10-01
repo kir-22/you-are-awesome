@@ -40,7 +40,34 @@ return new Promise((resolve)=>{
 };
 
 const createIncrementer = () => {
-   
+   const obj={
+       number: 1,
+       next: function(){
+           return {
+               value: this.number++
+            };
+       }
+   }
+   //Object obj make an iterator
+   obj[Symbol.iterator] = () => {
+       let current = this.number;
+       let last = 10;
+       return{
+           next: () => {
+               if(current<=last){
+                   return {
+                       done:false,
+                       value: current++
+                   }
+               }else{
+                   return{
+                       done: true
+                   }
+               }
+           }
+       }
+   }
+    return obj;
     }
 
 // return same argument not earlier than in one second, and not later, than in two
