@@ -71,7 +71,12 @@ const createIncrementer = () => {
     }
 
 // return same argument not earlier than in one second, and not later, than in two
-const returnBackInSecond = () => {};
+const returnBackInSecond = (done) => {
+     return new Promise(resolve=>
+        setTimeout(()=>{
+            resolve(done)},1000)
+    )
+};
 const getDeepPropertiesCount = () => {};
 
 
